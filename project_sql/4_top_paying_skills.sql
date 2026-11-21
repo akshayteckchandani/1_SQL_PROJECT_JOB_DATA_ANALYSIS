@@ -17,7 +17,8 @@ LEFT JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 
 WHERE 
     job_title_short = 'Data Analyst' AND
-    salary_year_avg IS NOT NULL
+    salary_year_avg IS NOT NULL AND
+    job_work_from_home = True
 GROUP BY
     skills
 ORDER BY
@@ -26,28 +27,37 @@ LIMIT 25;
 
 
 /*
-Data Insights: Here are a few takeaways from the top paying skills for Data Analysts:
-              - Specialised skills such as SVN ($400K) and Solidity ($179K) top the rankings, although low 
-                job-posting counts may inflate average salaries.
-              - DevOps and cloud infrastructure skills like Terraform, VMware, Ansible, and Puppet feature 
-                prominently among high-paying technologies.
-              - AI/ML skills such as DataRobot, MXNet, PyTorch, and TensorFlow demonstrate strong salary 
-                potential, with averages exceeding $120K.
+Data Insights: 
+- PySpark tops the list (~$208K)**, well ahead of everything else. Big-data processing skills are rewarded most.
+- Engineering and DevOps tools pay highly.** Bitbucket (~$189K), GitLab (~$155K), Kubernetes (~$133K), Jenkins (~$125K) 
+  and Linux (~$137K) show that analysts who can work with code, version control and deployment earn more.
+- Core Python libraries are strong.** Pandas (~$152K), NumPy (~$144K), Jupyter (~$153K) and scikit-learn (~$126K) all sit in 
+  the upper-middle of the list, so Python is a solid base skill.
+- Cloud and data platforms matter.** Databricks (~$142K), Airflow (~$126K), GCP (~$123K) and Scala (~$125K) point to demand for 
+  pipeline and cloud skills.
+- Niche tools may be skewed.** Couchbase and Watson have identical salaries (~$160.5K), and Swift and Golang are unusual for analytics. 
+  This suggests very few job postings behind those averages, so check the job count for each skill before trusting the numbers.
+- Takeaway for learning:** build on SQL and Python, then add PySpark, a cloud platform and Git. That path matches the highest-paying 
+  skills here.
 
 OUTPUT:
 =======
 
 [
   {
-    "skills": "svn",
-    "average_salary": "400000"
+    "skills": "pyspark",
+    "average_salary": "208172"
   },
   {
-    "skills": "solidity",
-    "average_salary": "179000"
+    "skills": "bitbucket",
+    "average_salary": "189155"
   },
   {
     "skills": "couchbase",
+    "average_salary": "160515"
+  },
+  {
+    "skills": "watson",
     "average_salary": "160515"
   },
   {
@@ -55,88 +65,84 @@ OUTPUT:
     "average_salary": "155486"
   },
   {
-    "skills": "golang",
-    "average_salary": "155000"
-  },
-  {
-    "skills": "mxnet",
-    "average_salary": "149000"
-  },
-  {
-    "skills": "dplyr",
-    "average_salary": "147633"
-  },
-  {
-    "skills": "vmware",
-    "average_salary": "147500"
-  },
-  {
-    "skills": "terraform",
-    "average_salary": "146734"
-  },
-  {
-    "skills": "twilio",
-    "average_salary": "138500"
-  },
-  {
     "skills": "gitlab",
-    "average_salary": "134126"
+    "average_salary": "154500"
   },
   {
-    "skills": "kafka",
-    "average_salary": "129999"
+    "skills": "swift",
+    "average_salary": "153750"
   },
   {
-    "skills": "puppet",
-    "average_salary": "129820"
+    "skills": "jupyter",
+    "average_salary": "152777"
   },
   {
-    "skills": "keras",
-    "average_salary": "127013"
+    "skills": "pandas",
+    "average_salary": "151821"
   },
   {
-    "skills": "pytorch",
-    "average_salary": "125226"
+    "skills": "elasticsearch",
+    "average_salary": "145000"
   },
   {
-    "skills": "perl",
-    "average_salary": "124686"
+    "skills": "golang",
+    "average_salary": "145000"
   },
   {
-    "skills": "ansible",
-    "average_salary": "124370"
+    "skills": "numpy",
+    "average_salary": "143513"
   },
   {
-    "skills": "hugging face",
-    "average_salary": "123950"
+    "skills": "databricks",
+    "average_salary": "141907"
   },
   {
-    "skills": "tensorflow",
-    "average_salary": "120647"
+    "skills": "linux",
+    "average_salary": "136508"
   },
   {
-    "skills": "cassandra",
-    "average_salary": "118407"
-  },
-  {
-    "skills": "notion",
-    "average_salary": "118092"
+    "skills": "kubernetes",
+    "average_salary": "132500"
   },
   {
     "skills": "atlassian",
-    "average_salary": "117966"
+    "average_salary": "131162"
   },
   {
-    "skills": "bitbucket",
-    "average_salary": "116712"
+    "skills": "twilio",
+    "average_salary": "127000"
   },
   {
     "skills": "airflow",
-    "average_salary": "116387"
+    "average_salary": "126103"
+  },
+  {
+    "skills": "scikit-learn",
+    "average_salary": "125781"
+  },
+  {
+    "skills": "jenkins",
+    "average_salary": "125436"
+  },
+  {
+    "skills": "notion",
+    "average_salary": "125000"
   },
   {
     "skills": "scala",
-    "average_salary": "115480"
+    "average_salary": "124903"
+  },
+  {
+    "skills": "postgresql",
+    "average_salary": "123879"
+  },
+  {
+    "skills": "gcp",
+    "average_salary": "122500"
+  },
+  {
+    "skills": "microstrategy",
+    "average_salary": "121619"
   }
 ]
 

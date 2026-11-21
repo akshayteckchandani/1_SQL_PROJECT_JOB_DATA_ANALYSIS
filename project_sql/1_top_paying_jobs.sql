@@ -1,6 +1,6 @@
 /*
-Questions: What are the top-paying Data Analyst jobs in India in 2023?
-- Identify the top 10 highest paying Data Analyst roles that are available in India.
+Questions: What are the top-paying Data Analyst remote jobs in 2023?
+- Identify the top 20 highest paying Data Analyst roles that are available remotely.
 - Focuses on job postings with specified salaries (remove NULLS).
 - Why? Highlight the top paying opportunities for Data Analysts, offering insights into employment options and location. 
 */
@@ -18,159 +18,215 @@ FROM
 LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
 WHERE
     job_title_short = 'Data Analyst' AND
-    job_location = 'India' AND
+    job_work_from_home = True AND
     salary_year_avg IS NOT NULL
 ORDER BY
-    salary_year_avg DESC;
+    salary_year_avg DESC
+LIMIT 20;
 
 /*
-Key Insights – Top-Paying Data Analyst Jobs in India (2023)
+Key Insights – Top-Paying Data Analyst Remote Jobs (2023)
 
-- Highest-paying role: Senior Business & Data Analyst at Deutsche Bank, offering an average annual salary of $119,250.
-- Experience matters: Senior-level analyst positions dominate the top salary brackets, indicating higher earning 
-  potential with experience.
-- Industry concentration: Banking, finance, healthcare, and pharmaceuticals feature prominently among the 
-  highest-paying employers.
-- Diverse specialisations: Financial Data Analysis, HR Analytics, Business Intelligence, and Healthcare Research offer 
-  lucrative career opportunities.
-- Full-time dominance: 13 out of 14 listings are full-time positions, with only one contract-based role.
-- Salary disparity: Salaries range from $32,400 to $119,250, highlighting significant differences across roles and 
-  specialisations.
-- Entry-level opportunity: Associate Data Analyst at Amwell offers $64,600, suggesting that specialised skills can 
-  command competitive salaries even at associate levels.
+1. Exceptional salary outlier: Mantys offers $650,000, significantly higher than the second-highest listing at Meta ($336,500). 
+   This could be an outlier and should be investigated before drawing conclusions.
+
+2. Leadership roles command higher salaries: Director-level positions at Meta ($336,500), AT&T ($255,830) and A-Line Staffing ($170,000) 
+   feature prominently, highlighting the earning potential of senior analytics positions.
+
+3. Specialisation offers strong earning potential: Roles in marketing analytics, financial analytics, enterprise analytics and data intelligence 
+   appear among the highest-paying listings.
+
+4. Principal and senior positions dominate: Several Principal Data Analyst positions at SmartAsset, Motional and other organisations offer 
+   salaries exceeding $180,000, indicating the value of advanced experience and expertise.
+
+5. Full-time employment dominates: 19 out of 20 listings are full-time, with only one contractor position, suggesting that full-time 
+   employment is prevalent among these high-paying opportunities.
 
 Overall takeaway: Seniority, domain expertise, and specialisation in finance, business intelligence, and healthcare 
 appear to be key factors associated with higher-paying data analyst opportunities.
 
 Output:
 ========
-
 [
   {
-    "job_id": 325402,
-    "job_title": "Senior Business & Data Analyst",
-    "company_name": "Deutsche Bank",
-    "job_location": "India",
+    "job_id": 226942,
+    "job_title": "Data Analyst",
+    "company_name": "Mantys",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "119250.0",
-    "job_posted_date": "2023-11-21"
+    "salary_year_avg": "650000.0",
+    "job_posted_date": "2023-02-20"
   },
   {
-    "job_id": 908967,
-    "job_title": "Sr. Enterprise Data Analyst",
-    "company_name": "ACA Group",
-    "job_location": "India",
+    "job_id": 547382,
+    "job_title": "Director of Analytics",
+    "company_name": "Meta",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "118140.0",
-    "job_posted_date": "2023-12-21"
+    "salary_year_avg": "336500.0",
+    "job_posted_date": "2023-08-23"
   },
   {
-    "job_id": 591307,
-    "job_title": "HR Data Operations Analyst",
-    "company_name": "Clarivate",
-    "job_location": "India",
+    "job_id": 552322,
+    "job_title": "Associate Director- Data Insights",
+    "company_name": "AT&T",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "104550.0",
-    "job_posted_date": "2023-11-07"
+    "salary_year_avg": "255829.5",
+    "job_posted_date": "2023-06-18"
   },
   {
-    "job_id": 1218280,
-    "job_title": "Financial Data Analyst",
-    "company_name": "Loop Health",
-    "job_location": "India",
+    "job_id": 99305,
+    "job_title": "Data Analyst, Marketing",
+    "company_name": "Pinterest Job Advertisements",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "93600.0",
-    "job_posted_date": "2023-05-02"
+    "salary_year_avg": "232423.0",
+    "job_posted_date": "2023-12-05"
   },
   {
-    "job_id": 544240,
-    "job_title": "Healthcare Research & Data Analyst",
-    "company_name": "Clarivate",
-    "job_location": "India",
+    "job_id": 1021647,
+    "job_title": "Data Analyst (Hybrid/Remote)",
+    "company_name": "Uclahealthcareers",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "89118.0",
-    "job_posted_date": "2023-11-08"
+    "salary_year_avg": "217000.0",
+    "job_posted_date": "2023-01-17"
   },
   {
-    "job_id": 733296,
-    "job_title": "Data Integration and Business Intelligence Analyst",
-    "company_name": "Miratech",
-    "job_location": "India",
+    "job_id": 168310,
+    "job_title": "Principal Data Analyst (Remote)",
+    "company_name": "SmartAsset",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "79200.0",
-    "job_posted_date": "2023-07-27"
+    "salary_year_avg": "205000.0",
+    "job_posted_date": "2023-08-09"
   },
   {
-    "job_id": 152699,
-    "job_title": "Ai Research Engineer",
-    "company_name": "AlphaSense",
-    "job_location": "India",
+    "job_id": 731368,
+    "job_title": "Director, Data Analyst - HYBRID",
+    "company_name": "Inclusively",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "79200.0",
+    "salary_year_avg": "189309.0",
+    "job_posted_date": "2023-12-07"
+  },
+  {
+    "job_id": 310660,
+    "job_title": "Principal Data Analyst, AV Performance Analysis",
+    "company_name": "Motional",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "189000.0",
+    "job_posted_date": "2023-01-05"
+  },
+  {
+    "job_id": 1749593,
+    "job_title": "Principal Data Analyst",
+    "company_name": "SmartAsset",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "186000.0",
+    "job_posted_date": "2023-07-11"
+  },
+  {
+    "job_id": 387860,
+    "job_title": "ERM Data Analyst",
+    "company_name": "Get It Recruit - Information Technology",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "184000.0",
+    "job_posted_date": "2023-06-09"
+  },
+  {
+    "job_id": 1781684,
+    "job_title": "DTCC Data Analyst",
+    "company_name": "Robert Half",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "170000.0",
+    "job_posted_date": "2023-10-06"
+  },
+  {
+    "job_id": 987523,
+    "job_title": "Azure Data Python Consultant - contract to HIRE - Citizen or Perm...",
+    "company_name": "Kelly Science, Engineering, Technology & Telecom",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Contractor",
+    "salary_year_avg": "170000.0",
+    "job_posted_date": "2023-01-23"
+  },
+  {
+    "job_id": 1352513,
+    "job_title": "REMOTE Director of Data Analytics",
+    "company_name": "A-Line Staffing Solutions",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "170000.0",
+    "job_posted_date": "2023-08-09"
+  },
+  {
+    "job_id": 1525451,
+    "job_title": "Manager, Data Analyst",
+    "company_name": "Uber",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "167000.0",
+    "job_posted_date": "2023-04-18"
+  },
+  {
+    "job_id": 712473,
+    "job_title": "Data Analyst",
+    "company_name": "Get It Recruit - Information Technology",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "165000.0",
     "job_posted_date": "2023-08-14"
   },
   {
-    "job_id": 989706,
-    "job_title": "Data Analyst - Price hub",
-    "company_name": "Cargill",
-    "job_location": "India",
+    "job_id": 1246069,
+    "job_title": "Data Analyst",
+    "company_name": "Plexus Resource Solutions",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "75067.5",
-    "job_posted_date": "2023-12-22"
+    "salary_year_avg": "165000.0",
+    "job_posted_date": "2023-12-08"
   },
   {
-    "job_id": 1018519,
-    "job_title": "Data Analyst I",
-    "company_name": "Bristol Myers Squibb",
-    "job_location": "India",
+    "job_id": 1799883,
+    "job_title": "Principal Data Science Analyst- Remote",
+    "company_name": "Mayo Clinic",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "71600.0",
-    "job_posted_date": "2023-11-28"
+    "salary_year_avg": "164746.0",
+    "job_posted_date": "2023-04-14"
   },
   {
-    "job_id": 1797441,
-    "job_title": "IT Data Analytic Architect - Biopharma Commercial",
-    "company_name": "Merck Group",
-    "job_location": "India",
+    "job_id": 1423236,
+    "job_title": "Principal Data Science Analyst- Remote",
+    "company_name": "Mayo Clinic",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "64800.0",
-    "job_posted_date": "2023-12-22"
+    "salary_year_avg": "164746.0",
+    "job_posted_date": "2023-01-13"
   },
   {
-    "job_id": 306376,
-    "job_title": "Project Associate - Data Analytics (Contract)",
-    "company_name": "Array",
-    "job_location": "India",
-    "job_schedule_type": "Contractor",
-    "salary_year_avg": "64800.0",
-    "job_posted_date": "2023-09-01"
+    "job_id": 618890,
+    "job_title": "Principal Data Intelligence Analyst - Cardiac - Remote",
+    "company_name": "CEDARS-SINAI",
+    "job_location": "Anywhere",
+    "job_schedule_type": "Full-time",
+    "salary_year_avg": "163500.0",
+    "job_posted_date": "2023-09-20"
   },
   {
-    "job_id": 946307,
-    "job_title": "Associate Data Analyst",
-    "company_name": "Amwell",
-    "job_location": "India",
+    "job_id": 918213,
+    "job_title": "Senior - Data Analyst",
+    "company_name": "DIRECTV",
+    "job_location": "Anywhere",
     "job_schedule_type": "Full-time",
-    "salary_year_avg": "64600.0",
-    "job_posted_date": "2023-07-12"
-  },
-  {
-    "job_id": 671340,
-    "job_title": "Business Data Analyst",
-    "company_name": "NetApp",
-    "job_location": "India",
-    "job_schedule_type": "Full-time",
-    "salary_year_avg": "54988.0",
-    "job_posted_date": "2023-12-16"
-  },
-  {
-    "job_id": 1696350,
-    "job_title": "Analyst Invoice Processing (Data Operations)",
-    "company_name": "BlackRock",
-    "job_location": "India",
-    "job_schedule_type": "Full-time",
-    "salary_year_avg": "32400.0",
-    "job_posted_date": "2023-11-23"
+    "salary_year_avg": "160515.0",
+    "job_posted_date": "2023-06-14"
   }
 ]
 */
