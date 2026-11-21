@@ -68,7 +68,7 @@ Here is the breakdown of the top data analyst jobs in 2023:
 
 5. **Full-time employment dominates:** 19 out of 20 listings are full-time, with only one contractor position, suggesting that full-time employment is prevalent among these high-paying opportunities.
 
-![Annual average salaries grouped by no. of listings](assets\1_listings_to_avg_salary.png)
+![Job listings in each salary bracket](/assets/1_listings_to_avg_salary.png)
 
 *The bar graph visualizes the no. of job listings in each average salary bracket for data analysts; ChatGPT generated this graph from my sql query results*
 
